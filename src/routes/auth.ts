@@ -1,4 +1,4 @@
-import { login, resetPassword } from "../data/actions";
+import { login, resetPassword } from "../data/actions.js";
 import express from "express";
 import jwt from "jsonwebtoken";
 import dotenv from 'dotenv';

@@ -4,13 +4,12 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "tslint -c tslint.json src/**/*.ts",
-    "prepublish": "npm run build",
     "build": "tsc",
-    "postbuild": "replace-in-file 'from \\\"(\\.\\S*)\\\"' 'from \\\"$1.js\\\"' dist/**/*.js",
-    "start": "node --experimental-specifier-resolution=node dist/index.js",
-    "dev": "nodemon --config nodemon.json"
+    "prepublish": "npm run build",
+    "start": "node dist/index.js",
+    "lint": "tslint -c tslint.json src/**/*.ts",
+    "dev": "nodemon --config nodemon.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "me-tamiu",

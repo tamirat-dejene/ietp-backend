@@ -1,7 +1,7 @@
-import { ReportSortOption, ReportDataModel } from "../lib/definitions";
-import { createReport, getReports } from "../data/actions";
+import { ReportSortOption, ReportDataModel } from "../lib/definitions.js";
+import { createReport, getReports } from "../data/actions.js";
 import express from "express";
-import { process_image } from "../lib/api";
+import { process_image } from "../lib/api.js";
 
 const router = express.Router();
 

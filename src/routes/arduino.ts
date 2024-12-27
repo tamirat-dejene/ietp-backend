@@ -1,7 +1,7 @@
 import express from "express";
-import { process_image } from "../lib/api";
-import { format_api_response } from "../utils/middlewares";
-import { broadcast } from "../index";
+import { process_image } from "../lib/api.js";
+import { format_api_response } from "../utils/middlewares.js";
+import { broadcast } from "../index.js";
 import path from "path";
 import fs from "fs";
 

@@ -2,12 +2,12 @@
 import express, { Request, Response } from "express";
 import http from "http";
 import dotenv from "dotenv";
-import { initializeWebSocketServer, broadcast } from "./lib/websocket";
-import ImageRouter from "./routes/arduino";
-import AuthRouter from "./routes/auth";
-import ReportRouter from "./routes/reports";
+import { initializeWebSocketServer, broadcast } from "./lib/websocket.js";
+import ImageRouter from "./routes/arduino.js";
+import AuthRouter from "./routes/auth.js";
+import ReportRouter from "./routes/reports.js";
 import cors from "cors";
-import { logger } from "./utils/middlewares";
+import { logger } from "./utils/middlewares.js";
 
 dotenv.config({ path: ".env" });
 

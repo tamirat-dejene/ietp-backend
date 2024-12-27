@@ -1,5 +1,5 @@
 import { createHash, timingSafeEqual } from "crypto";
-import { ReportSortOption, ReportDataModel, User } from "lib/definitions";
+import { ReportSortOption, ReportDataModel, User } from "lib/definitions.js";
 import { matchSorter } from "match-sorter";
 import dotenv from "dotenv";
 import pg from "pg";
