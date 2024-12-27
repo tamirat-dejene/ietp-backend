@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["ESNext", "DOM"],
+
+    "allowSyntheticDefaultImports": true,
+
+    "baseUrl": "./",
+    "rootDir": "src",
+    "outDir": "dist",
+
+    "strict": true,
+    "alwaysStrict": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "declaration": true,
+    "pretty": true,
+
+    "paths": {
+      "lib/*": ["src/lib/*"],
+      "data/*": ["src/data/*"],
+      "utils/*": ["src/utils/*"],
+      "routes/*": ["src/routes/*"]
+    }
+  },
+  "include": ["typings/**/*", "src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "public"],
+
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  }
+}

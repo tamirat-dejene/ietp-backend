@@ -1,0 +1,16 @@
+{
+  "watch": [
+    "src",
+    "nodemon.json",
+    "tsconfig.json",
+    "package.json",
+    ".env"
+  ],
+  "ignore": [
+    "src/**/*.js",
+    "src/**/*.spec.js",
+    "src/**/*.spec.ts"
+  ],
+  "ext": "ts,js,json",
+  "exec": "node --loader ts-node/esm --no-warnings ./src/index.ts"
+}
