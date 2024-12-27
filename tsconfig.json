@@ -32,13 +32,11 @@
     "pretty": true,
 
     "paths": {
-      "lib/*": ["src/lib/*"],
-      "data/*": ["src/data/*"],
-      "utils/*": ["src/utils/*"],
-      "routes/*": ["src/routes/*"],
+      "*" : ["src/*"],
+      "src/*": ["src/*"]
     }
   },
-  "include": ["typings/**/*", "src/**/*.ts"],
+  "include": ["typings/**/*", "./src/**/*"],
   "exclude": ["node_modules", "dist", "public"],
 
   "ts-node": {
