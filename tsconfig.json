@@ -31,19 +31,19 @@
     "declaration": true,
     "pretty": true,
 
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths",
+        "afterDeclarations": true
+      }
+    ],
+
     "paths": {
-      "*": [
-        "src/*",
-        "node_modules/*",
-        "src/utils/*",
-        "src/routes/*",
-        "src/data/*",
-        "src/lib/*",
-      ],
+      "*": ["src/*"],
       "src/*": ["src/*"]
     }
   },
-  "include": ["typings/**/*", "./src/**/*"],
+  "include": ["./src/**/*"],
   "exclude": ["node_modules", "dist", "public"],
 
   "ts-node": {

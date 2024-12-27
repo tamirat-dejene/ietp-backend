@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "prepublish": "npm run build",
-    "build": "tsc && node dist/index.js",
-    "start": "node --no-warnings --loader ts-node/esm ./src/index.ts",
+    "build": "tsc",
+    "postbuild": "replace-in-file 'from \\\"(\\.\\S*)\\\"' 'from \\\"$1.js\\\"' dist/**/*.js",
+    "start": "node --experimental-specifier-resolution=node dist/index.js",
     "dev": "nodemon --config nodemon.json"
   },
   "keywords": [],
@@ -28,6 +29,7 @@
     "@types/sort-by": "^1.2.3",
     "@types/ws": "^8.5.13",
     "nodemon": "^3.1.9",
+    "replace-in-file": "^8.3.0",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.7.2"
@@ -48,6 +50,7 @@
     "pg": "^8.13.1",
     "sort-by": "^0.0.2",
     "tsconfig-paths": "^4.2.0",
+    "typescript-transform-paths": "^3.5.3",
     "uuid": "^11.0.3",
     "ws": "^8.18.0"
   }
