@@ -1,7 +1,7 @@
 import express from "express";
 import { process_image } from "../lib/api.js";
 import { format_api_response } from "../utils/middlewares.js";
-import { broadcast } from "../index.js";
+import { broadcast } from "../lib/websocket.js";
 import path from "path";
 import fs from "fs";
 
