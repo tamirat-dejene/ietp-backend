@@ -32,7 +32,14 @@
     "pretty": true,
 
     "paths": {
-      "*" : ["src/*"],
+      "*": [
+        "src/*",
+        "node_modules/*",
+        "src/utils/*",
+        "src/routes/*",
+        "src/data/*",
+        "src/lib/*",
+      ],
       "src/*": ["src/*"]
     }
   },
