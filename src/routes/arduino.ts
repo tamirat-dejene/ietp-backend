@@ -12,42 +12,32 @@ router.use(express.raw({ type: "image/jpeg", limit: "10mb" }));
 
 router.post("/upload", async (req, res) => {
   try {
-    // Check if req.body contains data
     if (!req.body || !(req.body instanceof Buffer)) {
       res.status(400).json({ success: false, message: "No valid image found" });
       return;
     }
 
-    // Save the image
-    const filePath = path.join(path.resolve(), "public/uploads");
+    const tmpDir = "/tmp";
     const uniqueFileName = `image_${Date.now()}.jpg`;
-    const fullPath = path.join(filePath, uniqueFileName);
+    const fullPath = path.join(tmpDir, uniqueFileName);
 
-    // Ensure the upload directory exists
-    if (!fs.existsSync(filePath)) {
-      fs.mkdirSync(filePath, { recursive: true });
-    }
-
-    // Write the image file to disk
     fs.writeFileSync(fullPath, req.body);
 
-    // Process the image
     const data = await process_image(fullPath);
     const formattedData = format_api_response(data);
 
-    // Broadcast the formatted data
     broadcast({
       ...formattedData,
       speed: 120,
       display_duration: 10000,
       message: "Speeding Alert, Please slow down and be careful!",
     });
-
-    // Send response
     res.status(200).json({
       success: true,
       message: "Image processed and broadcasted",
     });
+
+    fs.unlinkSync(fullPath);
   } catch (error) {
     console.error("Error in /upload route:", error);
     res.status(500).json({
