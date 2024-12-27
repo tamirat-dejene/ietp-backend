@@ -9,6 +9,12 @@ const router = express.Router();
 
 // Ensure raw middleware for image/jpeg
 router.use(express.raw({ type: "image/jpeg", limit: "10mb" }));
+router.options("/upload", (_, res) => {
+  res.header("Access-Control-Allow-Methods", "POST");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.status(200).send();
+});
 
 router.post("/upload", async (req, res) => {
   try {
