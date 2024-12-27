@@ -23,12 +23,16 @@ app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.use((_, res, next) => {res.header("Access-Control-Expose-Headers", "Authorization");next();});
+app.use((_, res, next) => {
+  res.header("Access-Control-Expose-Headers", "Authorization");
+  next();
+});
 app.use(logger);
-app.get("/", (_: Request, res: Response) => {res.send("IETP Group 98, Website Backend")});
-
+app.get("/", (_: Request, res: Response) => res.sendFile("index.html", { root: "./public" }));
 app.use("/auth", AuthRouter);
 app.use("/reports", ReportRouter);
 app.use("/arduino", ImageRouter);
 
-server.listen(PORT, HOST, () => console.log(`Server is running at http://${HOST}:${PORT}`));
+server.listen(PORT, HOST, () =>
+  console.log(`Server is running at http://${HOST}:${PORT}`)
+);

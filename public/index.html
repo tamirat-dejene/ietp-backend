@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IETP - G98</title>
-</head>
-<body>
-    
-    <h1> IETP - G98 </h1>
-    <p> This is the backend of the IETP project. </p>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
 
-    <a href="http://localhost:3000">Go to the frontend</a>
+        h1 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+        }
+
+        code {
+            background-color: #e7e7e7;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            color: #d63384;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>IoT Based Vehicle Speed Control System: IETP - G98 Project</h1>
+    <p>Use the <code>/arduino/upload</code>end point for accepting image data from ESP32 CAM</p>
+    <p>Use the <code>/reports?q=query&sortby=orderby</code> endpoint to search speeding report data</p>
+    <p>Use the <code>/reports</code>speeding reports</p>
+    <p>Use the <code>/report</code> endpoint with <code>POST</code> to create a new report on new speed limit violation</p>
+    <p>Use the <code>/auth/</code> endpoint with <code>PUT</code> authentication route</p>
+    <footer>
+        <code>&copy; December 2024 IETP - G98 AASTU</code>
+    </footer>
 </body>
+
 </html>
