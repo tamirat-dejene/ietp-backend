@@ -20,8 +20,6 @@ bower_components/
 jspm_packages/
 
 # Build directories
-dist/
-build/
 coverage/
 
 # IDE files
