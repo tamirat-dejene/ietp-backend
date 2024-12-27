@@ -35,7 +35,7 @@
       "lib/*": ["src/lib/*"],
       "data/*": ["src/data/*"],
       "utils/*": ["src/utils/*"],
-      "routes/*": ["src/routes/*"]
+      "routes/*": ["src/routes/*"],
     }
   },
   "include": ["typings/**/*", "src/**/*.ts"],
